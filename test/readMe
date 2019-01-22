@@ -1,0 +1,5 @@
+json 练习
+一，直接操作:
+   JSONObject 操作json多种情况，参见JsonTest类
+二，阿里巴巴的fastjson:
+   参考FastjsonTest类。
