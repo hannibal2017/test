@@ -81,6 +81,9 @@ public class BasicJava {
 		List list = Arrays.asList(arr);
 		System.out.println(list);*/
 		
+		/*
+		 * 时间戳格式化
+		 */
 		long unixstamp = 804787200000L;
 		Date dt = new Date(unixstamp);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
