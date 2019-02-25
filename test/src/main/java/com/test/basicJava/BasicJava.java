@@ -1,5 +1,9 @@
 package com.test.basicJava;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 public class BasicJava {
 
 	// static
@@ -64,9 +68,24 @@ public class BasicJava {
 		int b = 1;*/
 		
 		// static
-		BasicJava bj = new BasicJava();
+		/*BasicJava bj = new BasicJava();
 		BasicJava.method1();
 		System.out.println(BasicJava.a);
+		*/
+		
+		//reflection
+	/*	Integer a = 2;
+		System.out.println(a.getClass());
+		
+		Integer[] arr = {1, 2, 3};
+		List list = Arrays.asList(arr);
+		System.out.println(list);*/
+		
+		long unixstamp = 804787200000L;
+		Date dt = new Date(unixstamp);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		sdf.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+		System.out.println(sdf.format(dt));
 	}
 
 }
