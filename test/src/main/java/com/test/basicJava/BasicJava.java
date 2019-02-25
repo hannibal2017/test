@@ -1,6 +1,9 @@
 package com.test.basicJava;
 
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class BasicJava {
 
@@ -74,6 +77,23 @@ public class BasicJava {
 		byte[] bytes = str1.getBytes("UTF-8");
 		String str2 = new String(bytes, "UTF-8");
 		System.out.println(str2);
+		
+		//reflection
+	/*	Integer a = 2;
+		System.out.println(a.getClass());
+		
+		Integer[] arr = {1, 2, 3};
+		List list = Arrays.asList(arr);
+		System.out.println(list);*/
+		
+		/*
+		 * ʱ�����ʽ��
+		 */
+		long unixstamp = 804787200000L;
+		Date dt = new Date(unixstamp);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		sdf.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+		System.out.println(sdf.format(dt));
 	}
 
 }
