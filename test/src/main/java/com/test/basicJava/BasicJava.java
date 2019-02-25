@@ -1,5 +1,7 @@
 package com.test.basicJava;
 
+import java.io.UnsupportedEncodingException;
+
 public class BasicJava {
 
 	// static
@@ -14,20 +16,20 @@ public class BasicJava {
 	public static  void method1(){
 		System.out.println("static method1");
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
 		// 1 integer
-		// -128~127 »áÏàµÈ
+		// -128~127 ï¿½ï¿½ï¿½ï¿½ï¿½
 		/*
-		 * Integer a = 123; Integer b = 123; System.out.println("a,bÊÇ·ñÏàµÈ£º" + (a
+		 * Integer a = 123; Integer b = 123; System.out.println("a,bï¿½Ç·ï¿½ï¿½ï¿½È£ï¿½" + (a
 		 * == b));
 		 * 
-		 * // new Integer(123);»á´´½¨ÐÂ¶ÔÏó£¬ËùÒÔ²»ÏàµÈ Integer x = new Integer(123);
-		 * Integer y = new Integer(123); System.out.println("x,yÊÇ·ñÏàµÈ£º" + (x ==
+		 * // new Integer(123);ï¿½á´´ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ Integer x = new Integer(123);
+		 * Integer y = new Integer(123); System.out.println("x,yï¿½Ç·ï¿½ï¿½ï¿½È£ï¿½" + (x ==
 		 * y));
 		 * 
-		 * // valueOf() ·½·¨µÄÊµÏÖ±È½Ï¼òµ¥£¬¾ÍÊÇÏÈÅÐ¶ÏÖµÊÇ·ñÔÚ»º´æ³ØÖÐ£¬Èç¹ûÔÚµÄ»°¾ÍÖ±½Ó·µ»Ø»º´æ³ØµÄÄÚÈÝ¡£ Integer z =
+		 * // valueOf() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö±È½Ï¼òµ¥£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½Öµï¿½Ç·ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄ»ï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½Ø»ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Ý¡ï¿½ Integer z =
 		 * Integer.valueOf(123); Integer k = Integer.valueOf(123);
-		 * System.out.println("z,kÊÇ·ñÏàµÈ£º" + (z == k));
+		 * System.out.println("z,kï¿½Ç·ï¿½ï¿½ï¿½È£ï¿½" + (z == k));
 		 */
 
 		// 2,String
@@ -37,7 +39,7 @@ public class BasicJava {
 		 * s1.intern(); System.out.println(s3 == s4);
 		 */
 
-		// ½âÊÍµØÖ·£ºhttps://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html
+		// ï¿½ï¿½ï¿½Íµï¿½Ö·ï¿½ï¿½https://tech.meituan.com/2014/03/06/in-depth-understanding-string-intern.html
 		/*
 		 * String s = new String("1"); String s2 = "1"; s.intern();
 		 * System.out.println(s == s2);
@@ -45,16 +47,16 @@ public class BasicJava {
 		 * String s3 = new String("1") + new String("1"); String s4 = "11";
 		 * s3.intern(); System.out.println(s3 == s4);
 		 */
-		// jdk7¼°Ö®ºóµÄ°æ±¾£¬Ö§³Öswitch String×Ö·û
+		// jdk7ï¿½ï¿½Ö®ï¿½ï¿½Ä°æ±¾ï¿½ï¿½Ö§ï¿½ï¿½switch Stringï¿½Ö·ï¿½
 		/*
 		 * String s = "a"; switch (s) { case "a": System.out.println("aaa");
 		 * break; case "b": System.out.println("bbb"); break; }
 		 */
 
-		// "==" ºÍ equals
+		// "==" ï¿½ï¿½ equals
 		/*
-		 * ¶ÔÓÚ»ù±¾ÀàÐÍ£¬== ÅÐ¶ÏÁ½¸öÖµÊÇ·ñÏàµÈ£¬»ù±¾ÀàÐÍÃ»ÓÐ equals() ·½·¨¡£ 
-		 * ¶ÔÓÚÒýÓÃÀàÐÍ£¬== ÅÐ¶ÏÁ½¸ö±äÁ¿ÊÇ·ñÒýÓÃÍ¬Ò»¸ö¶ÔÏó£¬¶øequals() ÅÐ¶ÏÒýÓÃµÄ¶ÔÏóÊÇ·ñµÈ¼Û¡£
+		 * ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½== ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ç·ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ equals() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½== ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬¶ï¿½equals() ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ÃµÄ¶ï¿½ï¿½ï¿½ï¿½Ç·ï¿½È¼Û¡ï¿½
 		 */
 		/*Integer x = new Integer(1);
 		Integer y = new Integer(1);
@@ -64,9 +66,14 @@ public class BasicJava {
 		int b = 1;*/
 		
 		// static
-		BasicJava bj = new BasicJava();
+		/*BasicJava bj = new BasicJava();
 		BasicJava.method1();
 		System.out.println(BasicJava.a);
+		*/
+		String str1 = "ä¸­æ–‡";
+		byte[] bytes = str1.getBytes("UTF-8");
+		String str2 = new String(bytes, "UTF-8");
+		System.out.println(str2);
 	}
 
 }
