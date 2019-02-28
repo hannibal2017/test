@@ -1,9 +1,12 @@
 package com.test.basicJava;
 
 import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
 
 public class BasicJava {
 
@@ -73,10 +76,10 @@ public class BasicJava {
 		BasicJava.method1();
 		System.out.println(BasicJava.a);
 		*/
-		String str1 = "中文";
+		/*String str1 = "中文";
 		byte[] bytes = str1.getBytes("UTF-8");
 		String str2 = new String(bytes, "UTF-8");
-		System.out.println(str2);
+		System.out.println(str2);*/
 		
 		//reflection
 	/*	Integer a = 2;
@@ -89,11 +92,37 @@ public class BasicJava {
 		/*
 		 * ʱ�����ʽ��
 		 */
-		long unixstamp = 804787200000L;
+		/*long unixstamp = 804787200000L;
 		Date dt = new Date(unixstamp);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		sdf.setTimeZone(TimeZone.getTimeZone("GMT+8"));
-		System.out.println(sdf.format(dt));
+				;*/
+		// collection and map
+		// 1, map
+		/*HashMap hashMap = new HashMap();
+		hashMap.put("key1", "value1");
+		hashMap.put("key2", "value2");
+		hashMap.put("key3", "value3");
+		System.out.println(hashMap.put("key1", "value2"));//如果Key已经存在，则设置新值，再返回旧值。
+		System.out.println(hashMap);
+		*/
+		// 2 collection
+		/*Set hashSet = new HashSet();
+		for (int i = 0; i < 50; i++){
+			hashSet.add(i);
+		}
+		for (Object o : hashSet){
+			System.out.print(o + " ");
+		}
+		LinkedList ll = new LinkedList();*/
+		ArrayList al = new ArrayList();
+		al.add(5);
+		al.add(2);
+		al.add(58);
+		al.add(15);
+		System.out.println(al);
+		Collections.sort(al);
+		System.out.println(al);
 	}
 
 }
