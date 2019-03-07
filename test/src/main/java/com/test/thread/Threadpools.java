@@ -13,11 +13,22 @@ public class Threadpools {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
+		/*ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
 		System.out.println("****************************newCachedThreadPool*******************************");
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 20; i++) {
 			final int index = i;
 			newCachedThreadPool.execute(new ThreadForpools(index));
 		}
+		newCachedThreadPool.shutdown();
+		*/
+		
+		//newSingleThreadExecutor 确保线程顺序执行
+		ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
+		System.out.println("****************************newSingleThreadExecutor*******************************");
+		for (int i = 0; i < 20; i++) {
+			final int index = i;
+			newSingleThreadExecutor.execute(new ThreadForpools(index));
+		}
+		newSingleThreadExecutor.shutdown();
 	}
 }

@@ -8,15 +8,10 @@ public class ThreadForpools implements Runnable{
 	}
 
 	public void run() {
-		/***
-		 * 业务......省略
-		 */
-		try {
-			System.out.println("开始处理线程！！！");
-			Thread.sleep(index * 100);
-			System.out.println("我的线程标识是：" + this.toString());
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		System.out.println(index + ":开始处理线程！！！");
+//			Thread.sleep(index);
+//		System.out.println(index + ":我的线程标识是：" + this.toString());
+		System.out.println(index);
+		
 	}
 }
