@@ -1,7 +1,7 @@
 package com.test.basicJava;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Scanner;
+import java.util.HashMap;
 
 public class BasicJava {
 
@@ -147,15 +147,22 @@ public class BasicJava {
 		 * boolean b = m.matches(); System.out.println(b);
 		 * System.out.println(Pattern.matches("a*b", "aaaaab"));
 		 */
-		/*Scanner scan = new Scanner(System.in);
-		// 从键盘接收数据
-		// next方式接收字符串
-		System.out.println("next方式接收：");
-		// 判断是否还有输入
-		if (scan.hasNext()) {
-			String str1 = scan.next();
-			System.out.println("输入的数据为：" + str1);
-		}
-		scan.close();*/	
+		/*
+		 * Scanner scan = new Scanner(System.in); // 从键盘接收数据 // next方式接收字符串
+		 * System.out.println("next方式接收："); // 判断是否还有输入 if (scan.hasNext()) {
+		 * String str1 = scan.next(); System.out.println("输入的数据为：" + str1); }
+		 * scan.close();
+		 */
+		String s = "abc";
+		System.out.println(s.toString());
+		User user1 = new User(1, 20);
+		User user2 = new User(1, 20);
+		System.out.println(user1 == user2);// false
+		System.out.println(user1.equals(user2));// true
+		System.out.println(user2.hashCode());
+		HashMap<User, Integer> hashMap = new HashMap<User, Integer>();
+		hashMap.put(user2, 2);
+		System.out.println(hashMap.get(new User(1, 20)));
+
 	}
 }
