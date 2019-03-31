@@ -1,0 +1,6 @@
+设计模式分为三大类：创建型、结构型，行为型。
+一、创建型：
+1、单例模式：com.luo.singleton
+ 1）Singleton，基本实现方式，不适用于多线程方式
+ 2）SingletonSecond 方法加了锁，适用于多线程情况，但是影响效率
+ 3）SingletonThird 方法内加锁
