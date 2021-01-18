@@ -1,96 +1,96 @@
-package com.test.json;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-/**
- * [{"fileName":"¹ã¸æ","path":"ddd"},{"fileName":"·ÅÉ¢·§","path":"ghgh"}]
- * @author ThinkStation
- *
- */
-public class JsonTest {
-
-	public static void main(String[] args) {
-		// 1,½âÎöµ¥¸öjson
-		// String json = "{'name':'ÀîÊéºÀ','age':24}";
-		// parseJsonObject(json);
-
-		// 2,½âÎöjsonÊı×é
-//		String json = "[{'name':'ºúĞ¡Íş' , 'age':20 , 'male':true},{'name':'ÕÔĞ¡ÁÁ' , 'age':22 , 'male':false}]";
-//		parseJSONArray(json);
-		
-		//3,½âÎöµ¥¸öjson,ÏÂÃæ»¹ÓĞÊı¾İ
-//		String json = "{'name':'ÀîÊéºÀ','age':24,'male':true,'address':{'street':'nansahn','city':shenzehn','country':'china'}}";
-//		parseJsonPerson(json);
-		
-		//4,½âÎöjsonÊı×é.µ¥¸öjson,ÏÂÃæ»¹ÓĞÊı¾İ
-		String json = "[{'name':'ÀîÊéºÀ','age':24,'male':true,'address':{'street':'nansahn','city':shenzehn','country':'china'}}"
-				+ ""
-				+ ",{'name':'¹«Ë¾µÄ','age':24,'male':true,'address':{'street':'tianhe','city':guagnzhou','country':'china'}}]";
-		parseJsonArrayPerson(json);
-	}
-
-	public static void parseJsonObject(String json) {
-		try {
-			JSONObject jsonObject = new JSONObject(json);
-			String name = jsonObject.getString("name");
-			int age = jsonObject.getInt("age");
-			// ½ÓÏÂÀ´¸Ã¸ÉÂï¸ÉÂï
-			System.out.println("name:" + name + ",age:" + age);
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void parseJSONArray(String json) {
-		try {
-			JSONArray jsonArray = new JSONArray(json);
-			for (int i = 0; i < jsonArray.length(); i++) {
-				JSONObject jsonObject = jsonArray.getJSONObject(i);
-				String name = jsonObject.getString("name");
-				int age = jsonObject.getInt("age");
-				boolean male = jsonObject.getBoolean("male");
-				// ½ÓÏÂÀ´¸Ã¸ÉÂï¸ÉÂï
-				System.out.println("name:" + name + ",age:" + age + ",male:" + male);
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static void parseJsonPerson(String json) {  
-        try {  
-            JSONObject jsonObject = new JSONObject(json);  
-            String name = jsonObject.getString("name");  
-            int age = jsonObject.getInt("age");  
-            boolean male = jsonObject.getBoolean("male");  
-            JSONObject addressJSON = jsonObject.getJSONObject("address");  
-            String street = addressJSON.getString("street");  
-            String city = addressJSON.getString("city");  
-            String country = addressJSON.getString("country");  
-            System.out.println("addressJSON:" + addressJSON);
-        } catch (JSONException e) {  
-            // TODO Auto-generated catch block  
-            e.printStackTrace();  
-        }  
-    }
-	public static void parseJsonArrayPerson(String json) {  
-        try {  
-        	JSONArray jsonArray = new JSONArray(json);  
-            for (int i = 0; i < jsonArray.length(); i++) {  
-            	JSONObject jsonObject = jsonArray.getJSONObject(i);  
-                String name = jsonObject.getString("name");  
-                int age = jsonObject.getInt("age");  
-                boolean male = jsonObject.getBoolean("male");  
-                JSONObject addressJSON = jsonObject.getJSONObject("address");  
-                String street = addressJSON.getString("street");  
-                String city = addressJSON.getString("city");  
-                String country = addressJSON.getString("country");  
-                System.out.println("addressJSON:" + addressJSON);
-            }  
-        } catch (JSONException e) {  
-            e.printStackTrace();  
-        }  
-    }
-
-}
+//package com.test.json;
+//
+//import org.json.JSONArray;
+//import org.json.JSONException;
+//import org.json.JSONObject;
+///**
+// * [{"fileName":"ï¿½ï¿½ï¿½","path":"ddd"},{"fileName":"ï¿½ï¿½É¢ï¿½ï¿½","path":"ghgh"}]
+// * @author ThinkStation
+// *
+// */
+//public class JsonTest {
+//
+//	public static void main(String[] args) {
+//		// 1,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½json
+//		// String json = "{'name':'ï¿½ï¿½ï¿½ï¿½ï¿½','age':24}";
+//		// parseJsonObject(json);
+//
+//		// 2,ï¿½ï¿½ï¿½ï¿½jsonï¿½ï¿½ï¿½ï¿½
+////		String json = "[{'name':'ï¿½ï¿½Ğ¡ï¿½ï¿½' , 'age':20 , 'male':true},{'name':'ï¿½ï¿½Ğ¡ï¿½ï¿½' , 'age':22 , 'male':false}]";
+////		parseJSONArray(json);
+//
+//		//3,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½json,ï¿½ï¿½ï¿½æ»¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+////		String json = "{'name':'ï¿½ï¿½ï¿½ï¿½ï¿½','age':24,'male':true,'address':{'street':'nansahn','city':shenzehn','country':'china'}}";
+////		parseJsonPerson(json);
+//
+//		//4,ï¿½ï¿½ï¿½ï¿½jsonï¿½ï¿½ï¿½ï¿½.ï¿½ï¿½ï¿½ï¿½json,ï¿½ï¿½ï¿½æ»¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		String json = "[{'name':'ï¿½ï¿½ï¿½ï¿½ï¿½','age':24,'male':true,'address':{'street':'nansahn','city':shenzehn','country':'china'}}"
+//				+ ""
+//				+ ",{'name':'ï¿½ï¿½Ë¾ï¿½ï¿½','age':24,'male':true,'address':{'street':'tianhe','city':guagnzhou','country':'china'}}]";
+//		parseJsonArrayPerson(json);
+//	}
+//
+//	public static void parseJsonObject(String json) {
+//		try {
+//			JSONObject jsonObject = new JSONObject(json);
+//			String name = jsonObject.getString("name");
+//			int age = jsonObject.getInt("age");
+//			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//			System.out.println("name:" + name + ",age:" + age);
+//		} catch (JSONException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	public static void parseJSONArray(String json) {
+//		try {
+//			JSONArray jsonArray = new JSONArray(json);
+//			for (int i = 0; i < jsonArray.length(); i++) {
+//				JSONObject jsonObject = jsonArray.getJSONObject(i);
+//				String name = jsonObject.getString("name");
+//				int age = jsonObject.getInt("age");
+//				boolean male = jsonObject.getBoolean("male");
+//				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//				System.out.println("name:" + name + ",age:" + age + ",male:" + male);
+//			}
+//		} catch (JSONException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	public static void parseJsonPerson(String json) {
+//        try {
+//            JSONObject jsonObject = new JSONObject(json);
+//            String name = jsonObject.getString("name");
+//            int age = jsonObject.getInt("age");
+//            boolean male = jsonObject.getBoolean("male");
+//            JSONObject addressJSON = jsonObject.getJSONObject("address");
+//            String street = addressJSON.getString("street");
+//            String city = addressJSON.getString("city");
+//            String country = addressJSON.getString("country");
+//            System.out.println("addressJSON:" + addressJSON);
+//        } catch (JSONException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//    }
+//	public static void parseJsonArrayPerson(String json) {
+//        try {
+//        	JSONArray jsonArray = new JSONArray(json);
+//            for (int i = 0; i < jsonArray.length(); i++) {
+//            	JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                String name = jsonObject.getString("name");
+//                int age = jsonObject.getInt("age");
+//                boolean male = jsonObject.getBoolean("male");
+//                JSONObject addressJSON = jsonObject.getJSONObject("address");
+//                String street = addressJSON.getString("street");
+//                String city = addressJSON.getString("city");
+//                String country = addressJSON.getString("country");
+//                System.out.println("addressJSON:" + addressJSON);
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//}
